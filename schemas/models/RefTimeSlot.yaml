@@ -1,0 +1,5 @@
+name: RefTimeSlot
+
+fields:
+  startTime: time required
+  endTime: time required

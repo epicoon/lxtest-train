@@ -1,0 +1,10 @@
+name: Station
+
+fields:
+  name: string required
+
+relations:
+  platforms: (-<) Platform.station
+  parkings: (-<) Parking.station
+  outgoingStages: (-<) Stage.stationFrom
+  incomingStages: (-<) Stage.stationTo

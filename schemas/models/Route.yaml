@@ -1,0 +1,10 @@
+name: Route
+
+fields:
+  name: string required
+  bool: active default(true)
+
+relations:
+  parkings: (-<) Parking.route
+  daysOfWeek: (><) RefDayOfWeek.routes
+  trips: (-<) Trip.route

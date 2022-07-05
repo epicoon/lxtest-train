@@ -1,0 +1,13 @@
+name: Parking
+
+fields:
+  sequenceOrder: int required
+  wayDuration: interval required
+  stayDuration: interval required
+
+relations:
+  station: (>-) Station.parkings
+  platform: (>-) Platform.parkings
+  route: (>-) Route.parkings
+  incoming: (>-) RefTimeSlot
+  outgoing: (>-) RefTimeSlot

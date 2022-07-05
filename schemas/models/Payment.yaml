@@ -1,0 +1,9 @@
+name: Payment
+
+fields:
+  createdAt: datetime required
+
+relations:
+  transactions: (-<) Transaction.payment
+  status: (>-) RefPaymentStatus.payments
+  booking: (--) Booking.payment

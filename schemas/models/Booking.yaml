@@ -1,0 +1,10 @@
+name: Booking
+
+fields:
+  ticket: string
+
+relations:
+  trip: (>-) Trip.bookings
+  status: (>-) RefBookingStatus.bookings
+  user: (>-) User.bookings
+  payment: (fk--) Payment.booking

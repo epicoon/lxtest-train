@@ -1,0 +1,8 @@
+name: Platform
+
+fields:
+  number: int required
+
+relations:
+  station: (>-) Station.platforms
+  parkings: (-<) Parking.platform

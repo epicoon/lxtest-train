@@ -1,0 +1,200 @@
+actions:
+  - type: createTable
+    schema:
+      name: Balance
+      fields:
+        balance:
+          type: decimal
+          required: false
+          default: 0
+          details:
+            precision: 10
+            scale: 2
+  - type: createTable
+    schema:
+      name: Booking
+      fields:
+        ticket:
+          type: string
+          required: false
+          details:
+            size: 256
+  - type: createTable
+    schema:
+      name: Parking
+      fields:
+        sequenceOrder:
+          type: int
+          required: true
+        wayDuration:
+          type: interval
+          required: true
+        stayDuration:
+          type: interval
+          required: true
+  - type: createTable
+    schema:
+      name: Payment
+      fields:
+        createdAt:
+          type: datetime
+          required: true
+  - type: createTable
+    schema:
+      name: Platform
+      fields:
+        number:
+          type: int
+          required: true
+  - type: createTable
+    schema:
+      name: RefBookingStatus
+      fields:
+        name:
+          type: string
+          required: true
+          details:
+            size: 256
+  - type: createTable
+    schema:
+      name: RefDayOfWeek
+      fields:
+        name:
+          type: string
+          required: true
+          details:
+            size: 256
+  - type: createTable
+    schema:
+      name: RefPaymentStatus
+      fields:
+        name:
+          type: string
+          required: true
+          details:
+            size: 256
+  - type: createTable
+    schema:
+      name: RefTimeSlot
+      fields:
+        startTime:
+          type: time
+          required: true
+        endTime:
+          type: time
+          required: true
+  - type: createTable
+    schema:
+      name: RefTransactionType
+      fields:
+        name:
+          type: string
+          required: true
+          details:
+            size: 256
+  - type: createTable
+    schema:
+      name: Route
+      fields:
+        name:
+          type: string
+          required: true
+          details:
+            size: 256
+  - type: createTable
+    schema:
+      name: Stage
+      fields:
+        distance:
+          type: int
+          required: true
+        cost:
+          type: decimal
+          required: true
+          details:
+            precision: 10
+            scale: 2
+  - type: createTable
+    schema:
+      name: StageInTrip
+      fields:
+        cost:
+          type: decimal
+          required: false
+          details:
+            precision: 10
+            scale: 2
+        reservedSeatsCount:
+          type: int
+          required: false
+          default: 0
+  - type: createTable
+    schema:
+      name: Station
+      fields:
+        name:
+          type: string
+          required: true
+          details:
+            size: 256
+  - type: createTable
+    schema:
+      name: Train
+      fields:
+        code:
+          type: string
+          required: true
+          details:
+            size: 256
+        seatsCount:
+          type: int
+          required: true
+  - type: createTable
+    schema:
+      name: Transaction
+      fields:
+        amount:
+          type: decimal
+          required: true
+          details:
+            precision: 10
+            scale: 2
+        createdAt:
+          type: datetime
+          required: true
+  - type: createTable
+    schema:
+      name: Trip
+      fields:
+        name:
+          type: string
+          required: true
+          details:
+            size: 256
+        departureDate:
+          type: date
+          required: true
+        arrivalDate:
+          type: date
+          required: true
+        totalSeatsCount:
+          type: int
+          required: true
+        approved:
+          type: bool
+          required: false
+          default: false
+  - type: createTable
+    schema:
+      name: User
+      fields:
+        login:
+          type: string
+          required: true
+          details:
+            size: 256
+        role:
+          type: string
+          required: true
+          details:
+            size: 256

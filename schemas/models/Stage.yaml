@@ -1,0 +1,10 @@
+name: Stage
+
+fields:
+  distance: int required
+  cost: decimal(10, 2) required
+
+relations:
+  stationFrom: (>-) Station.outgoingStages
+  stationTo: (>-) Station.incomingStages
+  stagesInTrip: (-<) StageInTrip.stage

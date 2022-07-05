@@ -1,0 +1,173 @@
+modelChanges:
+  - modelName: Balance
+    actions:
+      - type: addRelation
+        relationName: user
+        definition:
+          type: oneToOne
+          relModel: User
+          relAttribute: balance
+          fkHost: true
+  - modelName: Booking
+    actions:
+      - type: addRelation
+        relationName: trip
+        definition:
+          type: manyToOne
+          relModel: Trip
+          relAttribute: bookings
+      - type: addRelation
+        relationName: status
+        definition:
+          type: manyToOne
+          relModel: RefBookingStatus
+          relAttribute: bookings
+      - type: addRelation
+        relationName: user
+        definition:
+          type: manyToOne
+          relModel: User
+          relAttribute: bookings
+      - type: addRelation
+        relationName: payment
+        definition:
+          type: oneToOne
+          relModel: Payment
+          relAttribute: booking
+          fkHost: true
+  - modelName: Parking
+    actions:
+      - type: addRelation
+        relationName: station
+        definition:
+          type: manyToOne
+          relModel: Station
+          relAttribute: parkings
+      - type: addRelation
+        relationName: platform
+        definition:
+          type: manyToOne
+          relModel: Platform
+          relAttribute: parkings
+      - type: addRelation
+        relationName: route
+        definition:
+          type: manyToOne
+          relModel: Route
+          relAttribute: parkings
+      - type: addRelation
+        relationName: incoming
+        definition:
+          type: manyToOne
+          relModel: RefTimeSlot
+          relAttribute: null
+      - type: addRelation
+        relationName: outgoing
+        definition:
+          type: manyToOne
+          relModel: RefTimeSlot
+          relAttribute: null
+  - modelName: Payment
+    actions:
+      - type: addRelation
+        relationName: status
+        definition:
+          type: manyToOne
+          relModel: RefPaymentStatus
+          relAttribute: payments
+  - modelName: Platform
+    actions:
+      - type: addRelation
+        relationName: station
+        definition:
+          type: manyToOne
+          relModel: Station
+          relAttribute: platforms
+  - modelName: RefDayOfWeek
+    actions:
+      - type: addRelation
+        relationName: routes
+        definition:
+          type: manyToMany
+          relModel: Route
+          relAttribute: daysOfWeek
+  - modelName: Stage
+    actions:
+      - type: addRelation
+        relationName: stationFrom
+        definition:
+          type: manyToOne
+          relModel: Station
+          relAttribute: outgoingStages
+      - type: addRelation
+        relationName: stationTo
+        definition:
+          type: manyToOne
+          relModel: Station
+          relAttribute: incomingStages
+  - modelName: StageInTrip
+    actions:
+      - type: changeField
+        fieldName: reservedSeatsCount
+        oldDefinition:
+          type: int
+          required: false
+          default: 0
+        newDefinition:
+          type: int
+          required: false
+          default: 0
+      - type: addRelation
+        relationName: trip
+        definition:
+          type: manyToOne
+          relModel: Trip
+          relAttribute: stagesInTrip
+      - type: addRelation
+        relationName: stage
+        definition:
+          type: manyToOne
+          relModel: Stage
+          relAttribute: stagesInTrip
+  - modelName: Transaction
+    actions:
+      - type: addRelation
+        relationName: payment
+        definition:
+          type: manyToOne
+          relModel: Payment
+          relAttribute: transactions
+      - type: addRelation
+        relationName: type
+        definition:
+          type: manyToOne
+          relModel: RefTransactionType
+          relAttribute: transactions
+      - type: addRelation
+        relationName: balanceFrom
+        definition:
+          type: oneToOne
+          relModel: Balance
+          relAttribute: null
+          fkHost: true
+      - type: addRelation
+        relationName: balanceTo
+        definition:
+          type: oneToOne
+          relModel: Balance
+          relAttribute: null
+          fkHost: true
+  - modelName: Trip
+    actions:
+      - type: addRelation
+        relationName: route
+        definition:
+          type: manyToOne
+          relModel: Route
+          relAttribute: trips
+      - type: addRelation
+        relationName: train
+        definition:
+          type: manyToOne
+          relModel: Train
+          relAttribute: trips

@@ -1,0 +1,7 @@
+name: RefTransactionType
+
+fields:
+  name: string required
+
+relations:
+  transactions: (-<) Transaction.type

@@ -1,0 +1,11 @@
+name: Transaction
+
+fields:
+  amount: decimal(10, 2) required
+  createdAt: datetime required
+
+relations:
+  payment: (>-) Payment.transactions
+  type: (>-) RefTransactionType.transactions
+  balanceFrom: (fk--) Balance
+  balanceTo: (fk--) Balance

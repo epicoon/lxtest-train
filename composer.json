@@ -1,0 +1,12 @@
+{
+  "name": "lx-test/train",
+  "description": "Lx test",
+  "version": "1.0.0",
+  "type": "metapackage",
+  "authors": [
+    {
+      "name": "a.sedov",
+      "email": "altkkb.vds@mail.ru"
+    }
+  ]
+}

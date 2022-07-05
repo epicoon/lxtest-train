@@ -1,0 +1,8 @@
+name: Train
+
+fields:
+  code: string required
+  seatsCount: int required
+
+relations:
+  trips: (-<) Trip.train

@@ -1,0 +1,14 @@
+name: Trip
+
+fields:
+  name: string required
+  departureDate: date required
+  arrivalDate: date required
+  totalSeatsCount: int required
+  approved: bool default(false)
+
+relations:
+  route: (>-) Route.trips
+  train: (>-) Train.trips
+  stagesInTrip: (-<) StageInTrip.trip
+  bookings: (-<) Booking.trip

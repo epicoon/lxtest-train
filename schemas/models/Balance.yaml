@@ -1,0 +1,7 @@
+name: Balance
+
+fields:
+  balance: decimal(10, 2) default(0)
+
+relations:
+  user: (fk--) User.balance

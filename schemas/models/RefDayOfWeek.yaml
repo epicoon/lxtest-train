@@ -1,0 +1,7 @@
+name: RefDayOfWeek
+
+fields:
+  name: string required
+
+relations:
+  routes: (><) Route.daysOfWeek

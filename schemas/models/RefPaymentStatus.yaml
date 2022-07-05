@@ -1,0 +1,7 @@
+name: RefPaymentStatus
+
+fields:
+  name: string required
+
+relations:
+  payments: (-<) Payment.status

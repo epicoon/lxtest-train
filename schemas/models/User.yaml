@@ -1,0 +1,9 @@
+name: User
+
+fields:
+  login: string required
+  role: string required
+
+relations:
+  balance: (--) Balance.user
+  bookings: (-<) Booking.user

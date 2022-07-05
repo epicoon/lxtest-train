@@ -1,0 +1,7 @@
+name: RefBookingStatus
+
+fields:
+  name: string required
+
+relations:
+  bookings: (-<) Booking.status

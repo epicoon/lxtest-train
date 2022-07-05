@@ -1,0 +1,9 @@
+name: StageInTrip
+
+fields:
+  cost: decimal(10, 2)
+  reservedSeatsCount: int default(0)
+
+relations:
+  trip: (>-) Trip.stagesInTrip
+  stage: (>-) Stage.stagesInTrip
